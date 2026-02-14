@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>O Cobrador de Memórias</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body id="body">
+    <div id="game-container">
+      <canvas id="gameCanvas" width="800" height="400"></canvas>
+      <button id="menu-btn" class="menu-toggle">⚙️ MENU</button>
+
+      <!-- Menu de Pausa (Escondido) -->
+      <div id="pause-menu" class="overlay hidden">
+        <h1>JOGO PAUSADO</h1>
+        <div class="menu-options">
+          <button id="resume-btn" class="btn">Continuar</button>
+          <button id="restart-level-btn" class="btn">Reiniciar Fase</button>
+          <button
+            id="reset-game-btn"
+            class="btn"
+            style="color: #f55; border-color: #f55"
+          >
+            Resetar Jogo
+          </button>
+        </div>
+        <p style="font-size: 12px; margin-top: 20px">
+          Use [ESC] para abrir/fechar
+        </p>
+      </div>
+
+      <!-- Camada de Interface (Narrativa/Puzzle) -->
+      <div id="ui-layer" class="overlay">
+        <h1 id="ui-title">Título</h1>
+        <p id="ui-text">Texto...</p>
+        <div id="choices-container"></div>
+
+        <!-- NOVO: Área de Enigmas -->
+        <div
+          id="riddle-container"
+          class="hidden"
+          style="
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <div id="riddle-options"></div>
+          <p
+            id="riddle-feedback"
+            style="height: 20px; color: #f55; margin-top: 10px"
+          ></p>
+        </div>
+
+        <div id="puzzle-container" class="hidden">
+          <div id="wires-box"></div>
+          <p id="puzzle-msg"></p>
+        </div>
+
+        <button id="action-btn" class="btn hidden">Continuar</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
