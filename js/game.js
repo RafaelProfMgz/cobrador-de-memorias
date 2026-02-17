@@ -10,12 +10,17 @@ export class Game {
     this.canvas = document.getElementById(canvasId);
     this.ctx = this.canvas.getContext("2d");
     // Inicializa o jogador
+
+    this.view = new GameView("game-container");
+
     this.player = new Player(this.canvas.width, this.canvas.height);
     this.currentLevelIndex = 0;
   }
 
   start() {
     // Inicializa sistemas essenciais
+    this.view.loadAssets();
+
     Input.init();
     // Nota: O AudioSystem.init() geralmente é chamado no clique inicial no main.js,
     // mas garantimos aqui caso o jogador reinicie.
