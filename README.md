@@ -111,4 +111,4 @@ Sinta-se à vontade para abrir uma **Issue** ou enviar um **Pull Request**.
 
 <p align="center">
   <i>"Quanto mais você tira de mim, maior eu fico. O que eu sou?"</i>
-K</p>
+</p>
