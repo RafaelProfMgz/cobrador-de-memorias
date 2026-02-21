@@ -1,124 +1,114 @@
 # 🕯️ O Cobrador de Memórias
 
-> **O que você sacrificaria para seguir em frente?**
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
+![Language](<https://img.shields.io/badge/Linguagem-JavaScript_(ES6)-f7df1e>)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-**O Cobrador de Memórias** é um experimento de *ludonarrativa* em formato de jogo 2D estilo **Metroidvania**, com atmosfera sombria e inspirada em universos cósmicos e ocultistas.
+> **"Em jogos, evolução geralmente significa poder. Aqui, evolução significa ausência."**
 
-A proposta inverte a lógica tradicional dos jogos:
-
-Em vez de ganhar habilidades (*power-ups*) para progredir,
-você precisa **vender suas próprias habilidades** para pagar o pedágio e avançar.
-
----
-
-## 🎮 Conceito
-
-Imagine:
-
-* Chegar em uma fase cheia de buracos…
-* Mas para acessá-la você precisou vender o **Pulo Duplo**.
-
-Ou então:
-
-* Resolver um puzzle baseado em cores (fio azul ou vermelho)…
-* Logo após ter vendido sua **Visão das Cores** para a Entidade.
-
-Aqui, progresso significa perda.
-Cada escolha altera a experiência de jogo de forma irreversível.
+**O Cobrador de Memórias** é um experimento de _ludonarrativa_ em formato de jogo 2D, com atmosfera inspirada em horror cósmico. A proposta inverte a lógica tradicional dos Metroidvanias: **em vez de ganhar habilidades (_power-ups_) para progredir, você deve vender fragmentos de si mesmo para pagar o pedágio.**
 
 ---
 
-## 🧠 Objetivo do Projeto
+## 🎮 O Conceito & O Dilema
 
-Este projeto nasceu como:
+Você não fica mais forte. Você se adapta à própria mutilação mecânica.
 
-* 🔬 Experimento de design narrativo
-* 🎮 Exploração de mecânicas de perda permanente
-* 🧩 Teste de coerência entre gameplay e narrativa
-* 🧪 Laboratório técnico com Canvas e renderização 2D
+Imagine chegar a uma fase repleta de abismos verticais, apenas para perceber que, para destrancar a porta de entrada, você teve que vender a habilidade de **Pulo Duplo**. Ou enfrentar um quebra-cabeça baseado em cores (cortar o fio azul) logo após ter negociado sua **Visão Cromática** com a Entidade.
 
----
-
-## 🛠️ Stack Atual
-
-* **JavaScript (Vanilla)**
-* **HTML5 Canvas**
-* Arquitetura modular própria
-
-### 🔜 Próximos passos
-
-* Migração para **PixiJS**
-* Sistema de habilidades negociáveis dinâmicas
-* Save state persistente
-* Melhorias na pipeline de renderização
+Cada escolha altera a experiência de gameplay, a interface e a resolução de puzzles de forma irreversível.
 
 ---
 
-## 🧩 Mecânica Central
+## 🗺️ Roadmap de Desenvolvimento
 
-O jogo possui uma Entidade chamada **O Cobrador**, que exige habilidades como pagamento.
+Este projeto segue a filosofia **Build in Public**. Abaixo, o mapa de atualizações técnicas e narrativas:
 
-Exemplos de habilidades negociáveis:
+### ✅ Fase 1: O Núcleo Lógico (Concluído)
 
-* Pulo Duplo
-* Dash
-* Visão das Cores
-* Mapa
-* Indicador de Vida
-* HUD
-* Som
-* Tempo de reação
+_Foco: Arquitetura, Física Customizada e Lógica de Sacrifício._
 
-Cada habilidade vendida altera:
+- [x] Game Loop e Time Step.
+- [x] Engine de Física AABB (Plataformas, Colisões, Gravidade).
+- [x] Sistema de Estado Global (Gerenciamento de Habilidades perdidas).
+- [ ] Lógica de Puzzles Contextuais (Botões, Portas, Blocos de Fase).
+- [ ] Enigmas de Texto (Riddles) antes do sacrifício.
 
-* Level design
-* UI
-* Feedback do jogador
-* Estratégia de progressão
+### 🚧 Fase 2: A Vida Visual & Audio (Atual)
+
+_Foco: Migração para WebGL e Design de Som._
+
+- [x] Sistema de Áudio (Web Audio API) com trilha dinâmica e SFX.
+- [ ] Integração da **PixiJS** para renderização de sprites.
+- [ ] Substituição dos "quadrados" (`ctx.fillRect`) por assets artísticos.
+- [ ] Efeitos de partículas e feedback visual (Juice).
+- [ ] Iluminação dinâmica para fases escuras.
+
+### 📅 Fase 3: Expansão de Conteúdo
+
+_Foco: Level Design e Complexidade._
+
+- [ ] 10 Níveis com dificuldade progressiva.
+- [ ] Novas mecânicas (Gravidade invertida, Espelhos da realidade).
+- [ ] Sistema de Save/Load local (LocalStorage).
+
+### 📅 Fase 4: Lançamento
+
+- [ ] Menu Principal, Créditos e Configurações.
+- [ ] Otimização e Deploy no **Itch.io**.
 
 ---
 
-## 🎨 Direção Artística
+## 🛠️ Stack Tecnológica
 
-* Pixel Art
-* Ambientação dark
-* Influência de horror cósmico
-* Minimalismo UI-progressivo (interface pode desaparecer)
+O projeto evita engines pesadas (como Unity/Godot) propositalmente para explorar engenharia de software pura.
 
-## 🚀 Como rodar
+- **Core:** JavaScript (ES6 Modules) - Arquitetura própria.
+- **Renderização:** HTML5 Canvas API (Migrando para PixiJS/WebGL).
+- **Áudio:** Web Audio API (Sintetização e Buffer Loader).
+- **Interface:** HTML/CSS sobreposto com animações via **GSAP**.
+- **Controle de Versão:** Git & GitHub.
 
-Clone o repositório:
+---
 
-```bash
-git clone https://github.com/seu-usuario/o-cobrador-de-memorias.git
-```
+## 🚀 Como Rodar o Projeto
 
-Abra o `index.html` no navegador
-ou utilize uma extensão como **Live Server**.
+Como o projeto utiliza Módulos ES6 (`import`/`export`), ele precisa rodar em um servidor local (apenas abrir o arquivo não funcionará devido a políticas de CORS).
+
+1.  **Clone o repositório:**
+
+    ```bash
+    git clone https://github.com/RafaelProfMgz/stick_test.git
+    cd stick_test
+    ```
+
+2.  **Rode o servidor local:**
+    - **Opção A (VS Code):** Instale a extensão "Live Server", clique com botão direito no `index.html` e escolha "Open with Live Server".
+    - **Opção B (Python):**
+      ```bash
+      python -m http.server
+      ```
+    - **Opção C (Node):**
+      ```bash
+      npx http-server
+      ```
+
+3.  Acesse `http://localhost:8000` (ou a porta indicada).
 
 ---
 
 ## 🤝 Contribuições
 
-Este é um projeto **open-source**.
+Este é um laboratório aberto. Sugestões são bem-vindas nas seguintes áreas:
 
-Sugestões são bem-vindas:
+- Novas mecânicas de "punição" criativa.
+- Otimização de Render Loop.
+- Ideias de narrativa emergente.
 
-* Novas habilidades negociáveis
-* Ideias de design narrativo
-* Melhorias arquiteturais
-* Otimização de renderização
-* Refatorações
-
-Abra uma issue ou envie um PR 🚀
+Sinta-se à vontade para abrir uma **Issue** ou enviar um **Pull Request**.
 
 ---
 
-## 🧠 Filosofia do Projeto
-
-> Em jogos, evolução significa poder.
-> Aqui, evolução significa ausência.
-
-O jogador não fica mais forte.
-Ele se adapta à própria mutilação mecânica.
-
+<p align="center">
+  <i>"Quanto mais você tira de mim, maior eu fico. O que eu sou?"</i>
+K</p>
